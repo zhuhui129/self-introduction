@@ -1,0 +1,145 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style>
+		#box{
+			width:1000px;
+			height: 280px;
+			border-radius: 20px;
+			border: solid 2px #262626;
+			font-size: 48px;
+			text-align: center;
+			line-height: 240px;
+			margin: 80px auto;
+		}
+		input{
+			width: 8%;
+			height: 30vh;
+			margin: 0;
+		}
+		.white{
+			background: white;
+			border: solid 1px black;
+			outline: none;
+		}
+		.white:active{
+			background: aliceblue;
+		}
+		.black{
+			width: 5%;
+			background: black;
+			color: white;
+			border: solid 1px black;
+			outline: none;
+		}
+		.black:active{
+			background: brown;
+		}
+	</style>
+</head>
+
+<body>
+	 <audio src="琴键/C.wav" id="C" controls="controls" hidden="true">
+    </audio>
+	 <audio src="琴键/C1.wav" id="shengC" controls="controls" hidden="true">
+    </audio>
+	 <audio src="琴键/D.wav" id="D" controls="controls" hidden="true">
+    </audio>
+	 <audio src="琴键/D1.wav" id="shengD" controls="controls" hidden="true">
+    </audio>
+	 <audio src="琴键/E.wav" id="E" controls="controls" hidden="true">
+    </audio>
+	 <audio src="琴键/F.wav" id="F" controls="controls" hidden="true">
+    </audio>
+	 <audio src="琴键/F1.wav" id="shengF" controls="controls" hidden="true">
+    </audio>
+	 <audio src="琴键/G.wav" id="G" controls="controls" hidden="true">
+    </audio>
+	 <audio src="琴键/G1.wav" id="shengG" controls="controls" hidden="true">
+    </audio>
+	 <audio src="琴键/A.wav" id="A" controls="controls" hidden="true">
+    </audio>
+	 <audio src="琴键/A1.wav" id="shengA" controls="controls" hidden="true">
+    </audio>
+	 <audio src="琴键/B.wav" id="B" controls="controls" hidden="true">
+    </audio>
+	<div id="box">
+	<input type="button" onclick="C()" value="C" class="white" />
+	<input type="button" onclick="shengC()" value="C#"  class="black"/>
+	<input type="button" onclick="D()" value="D"  class="white"/>
+	<input type="button" onclick="shengD()" value="D#"  class="black"/>
+	<input type="button" onclick="E()" value="E"  class="white"/>
+	<input type="button" onclick="F()" value="F"  class="white"/>
+	<input type="button" onclick="shengF()" value="F#"  class="black"/>
+	<input type="button" onclick="G()" value="G"  class="white"/>
+	<input type="button" onclick="shengG()" value="G#"  class="black"/>
+	<input type="button" onclick="A()" value="A"  class="white"/>
+	<input type="button" onclick="shengA()" value="A#"  class="black"/>
+	<input type="button" onclick="B()" value="B"  class="white"/>
+	</div>
+</body>
+	<script language="javascript" type="text/javascript">
+        function C() {
+			var myAuto = document.getElementById('C');
+			myAuto.play();
+		}
+
+	    function shengC() {
+			var myAuto1 = document.getElementById('shengC');
+			myAuto1.play();
+		}
+
+		function D() {
+			var myAuto2 = document.getElementById('D');
+			myAuto2.play();
+		}
+
+		function shengD() {
+			var myAuto3 = document.getElementById('shengD');
+			myAuto3.play();
+		}
+
+	    function E() {
+			var myAuto4 = document.getElementById('E');
+			myAuto4.play();
+		}
+
+        function F() {
+        	var myAuto5 = document.getElementById('F');
+			myAuto5.play();
+		}
+
+		function shengF() {
+			var myAuto6 = document.getElementById('shengF');
+			myAuto6.play();
+		}
+
+		function G() {
+        	var myAuto7 = document.getElementById('G');
+			myAuto7.play();
+		}
+
+		function shengG() {
+			var myAuto8 = document.getElementById('shengG');
+			myAuto8.play();
+		}
+
+		function A() {
+			var myAuto9 = document.getElementById('A');
+			myAuto9.play();
+		}
+
+		function shengA() {
+			var myAuto10 = document.getElementById('shengA');
+			myAuto10.play();
+		}
+
+		function B() {
+			var myAuto11 = document.getElementById('B');
+			myAuto11.play();
+		}
+</script>
+</html>

@@ -1,0 +1,212 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜单</title>
+	<script src="echarts.min.js"></script>
+</head>
+	<style>
+		body{
+			background: #14227A;
+		}
+		
+		h1{
+			font-family: 华文行楷;
+			font-size:35px;
+			text-align: center;
+			color:#FFFFFF;
+			
+		}
+		form{
+			width:90%;
+			height:600px;
+			background:#FFF;
+			z-index: 1;
+	        margin:auto;
+			border-radius: 10px;
+			padding:20px;
+		}
+		a{
+			text-decoration: none;
+			color: #FFF;
+			font-family: 华文行楷;
+			font-size: 20px;
+		}
+		li{
+			background: #FFFFFF;
+			width:24.8%;
+			height:150px;
+			border:1px solid #565656;
+			float:left;
+			text-align:center;
+			line-height: 30px;
+			list-style:none;
+		    font-family: 华文行楷;
+			font-size:20px;
+			
+		}
+		h3{
+			height:30px;
+		}
+		img{
+			height:70%;
+			border-radius: 10px;
+		}
+		img:hover{
+			cursor:pointer;
+			height:72%;
+		}
+		.btn{
+			border:none;
+			color:#2A46F8;
+			margin-left: 900px;
+			margin-bottom: 10px;
+		}
+		.btn:hover{
+			cursor:pointer;
+		}
+		.modal{
+			height: 100%;
+			width: 100%;
+			position:fixed;
+			z-index: 1;
+			padding-top: 100px;
+			left:0;
+			top:0;
+			overflow: auto;
+			background-color:rgba(0,0,0,0.9);
+			display: none;
+			
+		}
+		
+		.close{
+			position: absolute;
+			top:15px;
+			right:35px;
+			color:#f1f1f1;
+			font-size: 40px;
+			font-weight:bold;
+			transition: 0.3s;
+			
+		}
+		.close:hover,
+		.close:focus{
+			color:#bbb;
+			text-decoration: none;
+			cursor:pointer;
+		}
+		#main{
+			margin: auto;
+			background: #fff;
+		}
+		.ashf:hover{
+			color:#FFE500;
+			cursor:pointer;
+		}
+		
+		h2{
+			color:white;
+			font-family: 仿宋;
+			font-size:15px;
+			text-align: center;
+			margin:auto;
+				
+		}
+	</style>
+
+<body>
+	<a href="index.html">返回</a>
+	<h1>周一 Monday</h1>
+	<h2>提示：点击图片点赞，点击菜名点踩</h2><div class="btn" onClick="a()">点击查看投票结果</div>
+	<form id="menu">
+		<li><img src="菜单/1.jpg"><br><div class="ashf">豆腐脑</div></li>
+		<li><img src="菜单/2.jpg"><br><div class="ashf">鸡腿</div></li>
+		<li><img src="菜单/3.jpg"><br><div class="ashf">很甜的东西</div></li>
+		<li><img src="菜单/4.jpg"><br><div class="ashf">很多水果</div></li>
+		<li><img src="菜单/5.jpg"><br><div class="ashf">鱼头</div></li>
+		<li><img src="菜单/6.jpg"><br><div class="ashf">猪排</div></li>
+		<li><img src="菜单/7.jpg"><br><div class="ashf">神秘蛋糕</div></li>
+		<li><img src="菜单/8.jpg"><br><div class="ashf">神秘的饭</div></li>
+		<li><img src="菜单/9.jpg"><br><div class="ashf">面</div></li>
+		<li><img src="菜单/10.jpg"><br><div class="ashf">牛油果</div></li>
+		<li><img src="菜单/11.jpg"><br><div class="ashf">神秘的圈</div></li>
+		<li><img src="菜单/12.jpg"><br><div class="ashf">串</div></li>
+		<li><img src="菜单/13.jpg"><br><div class="ashf">奶酪</div></li>
+		<li><img src="菜单/14.jpg"><br><div class="ashf">菜</div></li>
+		<li><img src="菜单/15.jpg"><br><div class="ashf">虾仁</div></li>
+		<li><img src="菜单/16.jpg"><br><div class="ashf">不知道是啥</div></li>
+		
+	</form>
+	<div id="myModal" class="modal">
+		<span class="close">&times;</span>
+		<div id="main" style="width: 1200px;height:400px;"></div>
+	</div>
+	<h3> </h3>
+</body>
+	<script>
+		var modal=document.getElementById("myModal");
+		var btn=document.getElementsByClassName("btn")[0];
+		btn.onclick=function(){
+			modal.style.display="block";
+			 var option = {
+            title: {
+                text: '投票数据',
+				left: "center",
+				top: "20px"
+            },
+            tooltip: {},
+            legend: {
+                data:['点赞数']
+            },
+            xAxis: {
+                data: ["豆腐脑","鸡腿","很甜的东西","很多水果","鱼头","猪排","神秘蛋糕","神秘的饭","面","牛油果","神秘的圈","串","奶酪","菜","虾仁","不知道是啥"],
+				type: 'category',
+				axisLabel: {
+				  interval: 0
+				}
+            },
+            yAxis: {
+				type: 'value'
+			},
+            series: [{
+                name: '喜爱值',
+                type: 'bar',
+                data: [arr[0], arr[1],arr[2], arr[3], arr[4],arr[5],arr[6],arr[7],arr[8],arr[9],arr[10],arr[11],arr[12],arr[13],arr[14],arr[15]]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+		}
+		var closebtn=document.getElementsByTagName("span")[0];
+		closebtn.onclick=function(){
+			modal.style.display="none";
+		}
+		
+		
+		var img=document.getElementsByTagName("img");
+		var arr=new Array();
+		for(var i=0;i<16;i++) arr[i]=0;
+		 var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+       
+       
+		for(var i=0;i<16;i++){
+			img[i].index = i;
+			img[i].onclick=function(){
+				arr[this.index]++;
+			}
+		}
+     
+       var ashf=document.getElementsByClassName("ashf");
+		for(var i=0;i<16;i++){
+			ashf[i].index = i;
+			ashf[i].onclick=function(){
+				arr[this.index]--;
+			}
+		}
+	</script>
+</html>
+
